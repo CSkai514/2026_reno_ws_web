@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs | Wong & Sim Dental Clinic — Penang</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+  :root {
+    --cream: #EDF8F8;
+    --warm-white: #F6FEFE;
+    --sand: #C2EBE9;
+    --taupe: #81D8D0;
+    --charcoal: #1A1A1A;
+    --dark: #0C2828;
+    --mid: #3D7A78;
+    --accent: #009B96;
+    --accent-light: #81D8D0;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--charcoal);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  section { padding: 110px 48px; }
+  .container { max-width: 1180px; margin: 0 auto; }
+   .nav-links a {
+    color: rgba(0, 0, 0, 0.85); text-decoration: none !important;
+    transition: color 0.3s;
+  }
+
+  /* ──────────── PAGE HEADER ──────────── */
+  .page-header {
+    padding: 180px 48px 60px;
+    background: var(--warm-white);
+    text-align: center;
+  }
+  .section-tag {
+    font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 20px; display: block;
+  }
+  .section-heading {
+    font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.6rem);
+    font-weight: 300; line-height: 1.15; color: var(--charcoal);
+    max-width: 800px; margin: 0 auto;
+  }
+
+  /* ──────────── FAQ LAYOUT ──────────── */
+  .faq-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 48px 120px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  /* Sidebar Tabs */
+  .faq-sidebar {
+    position: sticky;
+    top: 140px;
+  }
+  .faq-tab-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 16px 0;
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    cursor: pointer;
+    border-bottom: 1px solid var(--sand);
+    transition: all 0.3s ease;
+  }
+  .faq-tab-btn:hover { color: var(--accent); padding-left: 8px; }
+  .faq-tab-btn.active {
+    color: var(--charcoal);
+    font-weight: 600;
+    border-bottom-color: var(--accent);
+    padding-left: 12px;
+  }
+
+  /* Content Panel */
+  .faq-content-panel {
+    display: none;
+    animation: fadeUp 0.6s ease both;
+  }
+  .faq-content-panel.active { display: block; }
+  
+  .category-title {
+    font-family: var(--serif);
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: var(--accent);
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--sand);
+    padding-bottom: 16px;
+  }
+
+  .qa-block {
+    margin-bottom: 48px;
+    background: var(--warm-white);
+    padding: 40px;
+    border-radius: 2px;
+    border-left: 2px solid var(--sand);
+    transition: border-color 0.3s;
+  }
+  .qa-block:hover { border-left-color: var(--accent); }
+
+  .qa-question {
+    font-family: var(--serif);
+    font-size: 1.45rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+  .qa-answer {
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    color: var(--mid);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+  .qa-answer p + p { margin-top: 16px; }
+  .qa-answer ul { padding-left: 20px; margin-top: 16px; }
+  .qa-answer li { margin-bottom: 8px; }
+
+
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 1024px) {
+    .faq-container { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
+    .faq-sidebar {
+      position: relative; top: 0;
+      display: flex; overflow-x: auto; white-space: nowrap; gap: 20px;
+      padding-bottom: 10px; border-bottom: 1px solid var(--sand);
+    }
+    .faq-tab-btn { border-bottom: none; padding: 10px 0; }
+    .faq-tab-btn.active { border-bottom: 2px solid var(--accent); padding-left: 0; }
+    nav { padding: 20px 24px; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav id="mainNav"  class="scrolled">
+  <a href="index.html" class="nav-logo">
+    <img src="images/wongandsimlogo.webp" alt="Wong & Sim Dental Clinic">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <!-- TWEAK 3: Services Dropdown -->
+    <li class="dropdown">
+      <a href="index.html#services">Services</a>
+      <ul class="dropdown-menu">
+        <li><a href="treatments.html">General Dentistry</a></li>
+        <li><a href="dental_implants.html">Dental Implants</a></li>
+        <li><a href="veneers.html">Veneers</a></li>
+      </ul>
+    </li>
+    <li><a href="index.html#results">Results</a></li>
+    <li><a href="index.html#team">Our Team</a></li>
+    <li><a href="#">Faq</a></li>
+    <li><a href="index.html#locations">Locations</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="tel:043763770" class="btn-call">Call Us</a>
+    <a href="#contact" class="btn-book">Book Now</a>
+    <button class="mobile-menu-toggle" id="mobileMenuOpen">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <div class="mobile-menu-overlay" id="mobileMenu">
+  <button class="mobile-menu-close" id="mobileMenuClose"><i class="fas fa-times"></i></button>
+  <ul class="mobile-nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="treatments.html">General Dentistry</a></li>
+    <li><a href="dental_implants.html">Dental Implants</a></li>
+    <li><a href="veneers.html">Veneers</a></li>
+    <li><a href="index.html#results">Results</a></li>
+    <li><a href="index.html#team">Our Team</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="index.html#locations">Locations</a></li>
+  </ul>
+  
+  <div class="mobile-nav-cta">
+    <a href="tel:043763770" class="btn-outline-dark">Call Us</a>
+    <a href="#contact" target="_blank" class="btn-book">Book Now</a>
+  </div>
+</div>
+</nav>
+
+<!-- ── PAGE HEADER ── -->
+<header class="page-header">
+  <span class="section-tag">Information Centre</span>
+  <h1 class="section-heading">Frequently Asked Questions in Dental Center</h1>
+</header>
+
+<!-- ── FAQ SECTION ── -->
+<section class="faq-container">
+  
+  <!-- Sidebar Navigation -->
+  <aside class="faq-sidebar">
+    <button class="faq-tab-btn active" onclick="openTab(event, 'braces')">Braces</button>
+    <button class="faq-tab-btn" onclick="openTab(event, 'dentures')">Dentures</button>
+    <button class="faq-tab-btn" onclick="openTab(event, 'implant')">Dental Implant</button>
+    <button class="faq-tab-btn" onclick="openTab(event, 'invisalign')">Invisalign</button>
+    <button class="faq-tab-btn" onclick="openTab(event, 'rootcanal')">Root Canal Treatment</button>
+    <button class="faq-tab-btn" onclick="openTab(event, 'scaling')">Scaling And Polishing</button>
+    <button class="faq-tab-btn" onclick="openTab(event, 'whitening')">Teeth Whitening</button>
+    <button class="faq-tab-btn" onclick="openTab(event, 'veneers')">Veneers</button>
+    <button class="faq-tab-btn" onclick="openTab(event, 'wisdom')">Wisdom Tooth Surgery</button>
+  </aside>
+
+  <!-- Content Panels -->
+  <main class="faq-content-area">
+    
+    <!-- Braces -->
+    <div id="braces" class="faq-content-panel active">
+      <h3 class="category-title">Braces</h3>
+      <div class="qa-block">
+        <h4 class="qa-question">It is common to see people having dental Braces these days. Does everyoone need them? Why do they have to wear Braces?</h4>
+        <div class="qa-answer">People wear braces for a variety of reasons. The most common reason for orthodontic treatment with braces is to straighten out crooked teeth. Sometimes, teeth protrusion is another reason for treatment too. Other problems requiring treatment include spaced out teeth, missing teeth, improper bites and jaw disharmonies. Young children may occasionally have problems with tooth eruption, which may necessitate early orthodontic treatment.</div>
+      </div>
+      <div class="qa-block">
+        <h4 class="qa-question">When is a good time to start Braces?</h4>
+        <div class="qa-answer">In the majority of people who have crooked teeth but normal jaw growth, treatment can commence when most of the permanent teeth are out. This usually occurs around the age of 11 to 13 years. However, there are some instances when early intervention is needed. Some children have developing jaw disharmonies where the jaws may be growing abnormally. Some have problems with permanent tooth eruption, either due to lack of space or misdirection of the teeth. In these situations, early braces treatment is required to assist with the growth of the jaws or help guide teeth into their respective positions. This can take place anytime from 7 to 11 years of age. Very often, these problems go unnoticed, which is why the American Association of Orthodontists recommends that children should see an orthodontist from 7 years of age.</div>
+      </div>
+      <div class="qa-block">
+        <h4 class="qa-question">Are Braces only for Teenagers? Am I too old for Braces?</h4>
+        <div class="qa-answer">Orthodontic treatment is usually done during the teenage years. This is a good age as tooth movement is more efficient in younger patients. In addition, there are some growth potential remaining in adolescents, which may be beneficial during the course of treatment. Having said that, adults can benefit from braces too. There are no age limit for braces because teeth can continue to be straightened in adulthood.</div>
+      </div>
+      <div class="qa-block">
+        <h4 class="qa-question">I want to straighten my teeth but I feel conscious wearing traditional metal Braces. Are there other options available?</h4>
+        <div class="qa-answer">
+          <p>As more adults seek orthodontic treatment, the request for less visible, hidden or invisible braces have increased. Fortunately, there are braces available to not only suit the adult wearer’s request for a less visible or invisible treatment experience, these braces satisfy their functional purpose as well as traditional metal braces.</p>
+          <p>Ceramic braces, made of tooth-coloured ceramic brackets which are less visible at a glance, is a common solution to eradicating patients’ concerns to having their braces showing. Up close, a thin metal wire can sometimes be seen threading through the braces.</p>
+          <p>Invisible braces treatment is another aesthetic option for people who wish to straighten their teeth but desire a natural appearance. This system of braces consist of numerous clear plastic aligners that are worn over the teeth. Each of these aligners is custom made and progressively moves teeth into their desired positions. The aligners are barely seen when worn over the teeth due to the transparency and clarity of the material used. These braces are convenient and hygienic as patients can remove the aligners during mealtimes and whilst cleaning their teeth.</p>
+        </div>
+      </div>
+      <div class="qa-block">
+        <h4 class="qa-question">I have heard that retainers need to be worn after Braces treatment. Why is that so?</h4>
+        <div class="qa-answer">Upon completion of orthodontic treatment, the teeth are slightly unstable in their new positions. Teeth that have been moved have a tendency to return to their original positions due to the nature of the surrounding gum tissue. In order to minimise this tendency, retainers are usually worn over the teeth to maintain their corrected positions. In the initial period, they are worn throughout the day, only to be taken out when eating and brushing. When the teeth positions stabilise after a few months, the retainers may then be worn only at night.</div>
+      </div>
+    </div>
+
+    <!-- Dentures -->
+    <div id="dentures" class="faq-content-panel">
+      <h3 class="category-title">Dentures</h3>
+      <div class="qa-block">
+        <h4 class="qa-question">How long do dentures last?</h4>
+        <div class="qa-answer">In all patients, the gums and jaw bone continue to modify and ‘shrink’ with time. Most dentures will need to be replaced after 5 to 7 years. This is to ensure that the denture is well-fitting and does not ‘rock-about’ when eating.</div>
+      </div>
+      <div class="qa-block">
+        <h4 class="qa-question">What are the common problems with ill-fitted Dentures?</h4>
+        <div class="qa-answer">
+          Common problems are:
+          <ul>
+            <li>Gum soreness or ulcers from constant rubbing of the base of the denture against the gums</li>
+            <li>Not able to bite on harder or chewy foods</li>
+            <li>Food trap under the base of the denture which may result in gum irritation, gum infection and decay</li>
+            <li>Denture coming loose while smiling, talking and eating</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Implants -->
+    <div id="implant" class="faq-content-panel">
+      <h3 class="category-title">Dental Implant</h3>
+      <div class="qa-block">
+        <h4 class="qa-question">Who are suitable candidates for this procedure?</h4>
+        <div class="qa-answer">
+          <ul>
+            <li>Most patients are suitable candidates for implant treatment. In general, patients in reasonably good health, can undergo dental implant treatment.</li>
+            <li>Patients with conditions like uncontrolled diabetes and high blood pressure are not suitable candidates for dental implant treatment. However, once they have brought those conditions under control, a review to determine their suitability can be arranged again.</li>
+            <li>Our advice is to have a thorough examination (including 3-dimensional x-rays) with your specialist. It is not advisable to proceed with implant treatment without first having a detailed discussion with your dentist.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="qa-block">
+        <h4 class="qa-question">What will happen without treatment?</h4>
+        <div class="qa-answer">When a single tooth is lost, the surrounding bone will shrink. This causes neighbouring teeth to drift out of position, and opposing teeth may grow into the space left by the missing tooth. When multiple teeth are lost, patients can look aged due to loss of support for the lips.</div>
+      </div>
+      <div class="qa-block">
+        <h4 class="qa-question">How long do Implants last?</h4>
+        <div class="qa-answer">According to a current research, implants have a success rate of 95% in the last 10 years. However, parts of the implant may need replacement during the research period. Hence, it is important to use implant that is manufactured by reputable companies, so that replacement parts can be sourced easily when necessary.</div>
+      </div>
+      <div class="qa-block">
+        <h4 class="qa-question">Do Implants need special maintenance?</h4>
+        <div class="qa-answer">Implants are like our natural teeth and need to be cleaned daily. They will also need to be checked and cleaned regularly by your dentist. Professional cleaning of implants is done with special instruments to prevent damage to the surface of the implant.</div>
+      </div>
+    </div>
+
+    <!-- Invisalign -->
+    <div id="invisalign" class="faq-content-panel">
+      <h3 class="category-title">Invisalign</h3>
+      <div class="qa-block">
+        <h4 class="qa-question">How does it work?</h4>
+        <div class="qa-answer">Based on your Dentist’s diagnosis a 3D simulation of your tooth movement and final result is made. Once verified by your Dentist, a series of aligners are custom made in Align Technology’s laboratories using advanced 3D computer imaging technology. You are required to wear each aligner for two weeks before replacing it with the next aligner in the series until your teeth have been moved to the desired position.</div>
+      </div>
+      <div class="qa-block">
+        <h4 class="qa-question">How do I get started with Invisalign?</h4>
+        <div class="qa-answer">After your initial evaluation with your Dentist, you will discuss your goals for a new smile. This information will then be used to plan your treatment, take impressions and photographs of your teeth and smile. With advanced computer technology, the Dentist can then show you a 3D simulation of how your final smile could look like, even before you start your treatment.</div>
+      </div>
+      <div class="qa-block">
+        <h4 class="qa-question">How long does the Invisalign treatment take?</h4>
+        <div class="qa-answer">The total duration of treatment depends on the complexity of the treatment and is generally comparable to that of traditional braces. Typically, treatment can last between 12 and 24 months. During your consultation, your Invisalign Provider will be able to provide you with more detailed information.</div>
+      </div>
+      <div class="qa-block">
+        <h4 class="qa-question">How often must the Aligners be worn?</h4>
+        <div class="qa-answer">For best results, the aligners should be worn for 20 - 22 hours a day. You will be prescribed a new set of aligners every fortnight, we recommend a check-up once in every 4 – 6 weeks with your dentist.</div>
+      </div>
+      <div class="qa-block">
+         <h4 class="qa-question">Do the Aligners hurt?</h4>
+         <div class="qa-answer">The smooth aligners are not abrasive, nor is it harmful to the insides of your mouth. Pressure will be felt in the initial days after the fitting of your aligners. This is a good sign, as it means the aligners are moving your teeth.</div>
+      </div>
+    </div>
+
+    <!-- Root Canal -->
+    <div id="rootcanal" class="faq-content-panel">
+      <h3 class="category-title">Root Canal Treatment</h3>
+      <div class="qa-block">
+        <h4 class="qa-question">Is Root Canal Treatment painful?</h4>
+        <div class="qa-answer">You may have heard from your friends that root canal treatment is very painful. Root canal treatment should be a pain free procedure with just local anaesthesia. The reason why some patients experience pain is because it is difficult to achieve profound anaesthesia for a tooth with an acute abscess. In such situations a course of antibiotics will be prescribed. Treatment will be postponed till a few days later.</div>
+      </div>
+      <div class="qa-block">
+        <h4 class="qa-question">Can all teeth be treated with Root Canal Treatment?</h4>
+        <div class="qa-answer">Most teeth can be treated with root canal treatment. However, if there is a crack which extends beyond the crown of the tooth or if the root is fractured then the tooth cannot be saved. Your dentist will also ensure that the tooth has adequate bone support and can be restored before proceeding with a root canal treatment.</div>
+      </div>
+    </div>
+
+    <!-- Scaling -->
+    <div id="scaling" class="faq-content-panel">
+      <h3 class="category-title">Scaling And Polishing</h3>
+      <div class="qa-block">
+        <h4 class="qa-question">Will frequent Scaling and Polishing damage my teeth?</h4>
+        <div class="qa-answer">The process is perfectly safe and will not damage teeth. The instruments used are designed to remove hardened calculus effectively without damaging the surface of the teeth.</div>
+      </div>
+      <div class="qa-block">
+        <h4 class="qa-question">How often should I have Scaling and Polishing done?</h4>
+        <div class="qa-answer">The frequency depends on the individual’s needs. For most people requiring regular maintenance, scaling and polishing should be done once every 4 to 6 months.</div>
+      </div>
+      <div class="qa-block">
+        <h4 class="qa-question">Why is Scaling and Polishing necessary when I am already cleaning well at home?</h4>
+        <div class="qa-answer">The process removes hardened calculus that cannot be removed by simple tooth brushing at home. Good oral care maintenance at home is still important as it helps to prevent the formation of plaque, while scaling and polishing removes any calculus that has formed.</div>
+      </div>
+    </div>
+
+    <!-- Whitening -->
+    <div id="whitening" class="faq-content-panel">
+      <h3 class="category-title">Teeth Whitening</h3>
+      <div class="qa-block">
+        <h4 class="qa-question">Are there any side-effects associated with Teeth Whitening?</h4>
+        <div class="qa-answer">Teeth whitening is an extremely safe and straightforward procedure. The most common side effect experienced is sensitivity, the intensity varies from patient to patient. Teeth whitening will not affect the integrity of the tooth structure and existing fillings; however, existing fillings, veneers or crowns present in the front teeth are unlikely to lighten to the same degree as natural teeth and may need to be changed accordingly.</div>
+      </div>
+      <div class="qa-block">
+        <h4 class="qa-question">Is Teeth Whitening safe for Pregnant and nursing mothers?</h4>
+        <div class="qa-answer">Teeth whitening is generally perceived to be a safe procedure for pregnant of nursing mothers. This is because the active ingredient in whitening gel, Peroxide, breaks down in water and releases oxygen radicals, which penetrates the tooth and whitens it, and does not affect any other parts of the body. There are also no studies to indicate that teeth whitening poses any risks to a developing foetus, but, as the first trimester is a crucial period for the development of the foetus, we generally recommend caution. It is also completely safe for new mothers to use whitening gels whilst still nursing.</div>
+      </div>
+    </div>
+
+    <!-- Veneers -->
+    <div id="veneers" class="faq-content-panel">
+      <h3 class="category-title">Veneers</h3>
+      <div class="qa-block">
+        <h4 class="qa-question">What is the difference between Porcelain Laminates and Veneers?</h4>
+        <div class="qa-answer">Porcelain laminate and veneer are different terms used to refer to a thin porcelain shell that is shaped to resemble the front surface of a tooth. These shells are often used to restore damaged or discoloured teeth.</div>
+      </div>
+      <div class="qa-block">
+        <h4 class="qa-question">How durable are Veneers? Can they chip or crack? Will they fall off?</h4>
+        <div class="qa-answer">The veneers used at Wong & Sim Dental are made of the highest quality porcelain, yet it could chip or crack in contact with hard materials. Veneers have an average lifespan of at least 15 years. Good and regular maintenance will help veneers last longer, however, they are not meant to last forever so there is a need to have replacements at some point.</div>
+      </div>
+    </div>
+
+    <!-- Wisdom -->
+    <div id="wisdom" class="faq-content-panel">
+      <h3 class="category-title">Wisdom Tooth Surgery</h3>
+      <div class="qa-block">
+        <h4 class="qa-question">How is Wisdom Tooth Surgery done?</h4>
+        <div class="qa-answer">A wisdom tooth surgery is a minor but delicate surgical procedure to safely remove a wisdom tooth. Local anaesthesia is applied to the area that requires extraction. If the tooth is buried under the gum or has partially erupted, after making sure that the surgical area is numbed, small incisions are made to allow for the extraction of the wisdom tooth. Sometimes, a dentist is able to cleanly extract the wisdom tooth without the need for incisions. The decision on how the procedure will progress is dependent on the examination and x-rays during the initial consultation.</div>
+      </div>
+    </div>
+
+  </main>
+</section>
+<!-- ── CONTACT ── -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <span class="section-tag" style="color:var(--taupe)">Get In Touch</span>
+        <h2 class="section-heading reveal">Tell us about your<br>dental <em>concerns.</em></h2>
+        <p>Share your needs with us, and our team will be in touch shortly. Every treatment journey begins with a conversation.</p>
+        <div class="contact-details">
+          <div class="contact-detail-item">
+            <span class="contact-detail-label">Summerton, Bayan Lepas</span>
+            <span class="contact-detail-val">04-376 3770 · 012-307 3770</span>
+          </div>
+          <div class="contact-detail-item">
+            <span class="contact-detail-label">Pulau Tikus, Georgetown</span>
+            <span class="contact-detail-val">04-228 6818 · 012-969 0106</span>
+          </div>
+          <div class="contact-detail-item">
+            <span class="contact-detail-label">Bukit Mertajam</span>
+            <span class="contact-detail-val"> 012-969 0106</span>
+          </div>
+          <div class="contact-detail-item">
+            <span class="contact-detail-label">Instagram</span>
+            <span class="contact-detail-val">@wongandsimdental</span>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" name="name" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" name="phone" placeholder="01X-XXX XXXX">
+        </div>
+        <div class="form-group">
+          <label>Selected Treatment</label>
+          <select name="treatment">
+            <option value="" disabled selected>Choose a treatment</option>
+            <option>General Dentistry</option>
+            <option>Smile Makeover</option>
+            <option>Dental Implants</option>
+            <option>Orthodontics</option>
+            <option>Root Canal Therapy</option>
+            <option>Teeth Whitening</option>
+            <option>Other Inquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Preferred Clinic</label>
+          <select name="clinic">
+            <option value="" disabled selected>Choose a location</option>
+            <option>Summerton, Bayan Lepas</option>
+            <option>Pulau Tikus, Georgetown</option>
+            <option>Bukit Mertajam, Seberang Perai</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label id="messageLabel">Tell us more (optional)</label>
+          <textarea name="message" placeholder="Share any concerns or questions..."></textarea>
+        </div>
+
+        <!-- Honeypot -->
+        <input type="text" name="website" tabindex="-1" autocomplete="off"
+               style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true">
+
+        <button type="submit" class="form-submit">Start My Journey →</button>
+      </form>
+
+    </div>
+  </div>
+</section>
+<div class="wa-fab" id="waFab">
+  <a class="ig-btn" href="https://instagram.com/wongandsimdental" target="_blank" rel="noopener" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <button class="wa-toggle" id="waToggle" aria-expanded="false" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <i class="fas fa-xmark"></i>
+  </button>
+  <div class="branches">
+    <a class="branch" href="https://wa.me/60129690106?text=Hi%20Wong%20%26%20Sim%20Pulau%20Tikus" target="_blank" rel="noopener">
+      <span class="b-icon"><i class="fab fa-whatsapp"></i></span>
+      <span class="b-name">Pulau Tikus</span>
+    </a>
+    <a class="branch" href="https://wa.me/60123073770?text=Hi%20Wong%20%26%20Sim%20Summerton" target="_blank" rel="noopener">
+      <span class="b-icon"><i class="fab fa-whatsapp"></i></span>
+      <span class="b-name">Summerton</span>
+    </a>
+    <a class="branch" href="https://wa.me/60128317699?text=Hi%20Wong%20%26%20Sim%20Bukit%20Mertajam" target="_blank" rel="noopener">
+      <span class="b-icon"><i class="fab fa-whatsapp"></i></span>
+      <span class="b-name">Bukit Mertajam</span>
+    </a>
+  </div>
+</div>
+<div class="wa-fab-backdrop" id="waFabBackdrop"></div>
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <img src="images/wongandsimlogo.webp" alt="Wong & Sim Dental Clinic">
+        </a>
+        <p>Advanced treatments across three locations in Penang delivered with a patient-first approach.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Links</h4>
+        <a href="index.html#about">About</a><a href="index.html#team">Team</a><a href="index.html#services">Services</a>
+      </div>
+      <div class="footer-col">
+        <h4>Treatments</h4>
+        <a href="dental_implants.html">Implants</a><a href="veneers.html">Veneers</a><a href="treatments.html">General Dentistry</a>
+      </div>
+      <div class="footer-col">
+        <h4>Social</h4>
+        <a href="https://instagram.com/wongandsimdental">Instagram</a><a href="#">Facebook</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Wong & Sim Dental Clinic. All rights reserved.</span>
+      <div class="footer-social">Penang, Malaysia</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("faq-content-panel");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].classList.remove("active");
+    }
+    tablinks = document.getElementsByClassName("faq-tab-btn");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
+    }
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+    
+    // Scroll content to top on mobile
+    if (window.innerWidth <= 1024) {
+      window.scrollTo({ top: document.querySelector('.faq-content-area').offsetTop - 120, behavior: 'smooth' });
+    }
+  }
+</script>
+<script>
+
+  const mobileOpen = document.getElementById('mobileMenuOpen');
+  const mobileClose = document.getElementById('mobileMenuClose');
+  const mobileOverlay = document.getElementById('mobileMenu');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+
+  if(mobileOpen && mobileClose && mobileOverlay) {
+      mobileOpen.addEventListener('click', () => {
+        mobileOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Stop background scrolling
+      });
+
+      mobileClose.addEventListener('click', () => {
+        mobileOverlay.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+      });
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileOverlay.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      });
+  }
+</script>
+<script src="assets/script.js"></script>
+</body>
+</html>
