@@ -9,6 +9,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+<link rel="shortcut icon" href="images/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+<link rel="manifest" href="images/site.webmanifest" />
+
 <style>
 
 
@@ -270,6 +277,7 @@
   .service-card:hover .service-title { color: var(--warm-white); }
   .service-card:hover .service-desc { color: rgba(220,250,249,0.65); }
   .service-card:hover .service-num { color: rgba(255,255,255,0.12); }
+  .service-card:hover .service-icon { color: rgb(255, 255, 255); }
   .service-num { font-family: var(--serif); font-size: 5rem; font-weight: 300; color: var(--sand); position: absolute; top: 20px; right: 24px; line-height: 1; transition: color 0.4s; }
   .service-icon { font-size: 1.6rem; margin-bottom: 20px; }
   .service-title { font-family: var(--serif); font-size: 1.7rem; font-weight: 400; color: var(--charcoal); margin-bottom: 14px; transition: color 0.4s; }
@@ -654,7 +662,7 @@
           <div class="story-placeholder">
             <span>Your Clinic Image Here</span>
           </div>
-          <img src="images/clinic_photo/A7406174 3.JPG" alt="Wong & Sim Clinic Environment" onerror="this.style.display='none'">
+          <img src="images/clinic_photo/A7406174 3.webp" alt="Wong & Sim Clinic Environment" onerror="this.style.display='none'">
         </div>
         
         <div class="story-stat">
@@ -775,22 +783,22 @@
           <div class="gallery-grid">
             <div class="gallery-item">
               <div class="gallery-placeholder">Patient 1<br>Before & After</div>
-              <img src="images/before&after_photo/Teeth B&A Dr Brenda 1 060825.jpg" alt="Patient 1 - Smile Makeover Before and After" onerror="this.style.display='none'">
+              <img src="images/before&after_photo/Teeth B&A Dr Brenda 1 060825.webp" alt="Patient 1 - Smile Makeover Before and After" onerror="this.style.display='none'">
               <div class="gallery-item-overlay"><span class="gallery-label"></span></div>
             </div>
             <div class="gallery-item">
               <div class="gallery-placeholder">Patient 2<br>Before & After</div>
-              <img src="images/before&after_photo/Teeth B&A Dr Brenda 10 060825-01.jpg" alt="Patient 2 - Veneers Before and After" onerror="this.style.display='none'">
+              <img src="images/before&after_photo/Teeth B&A Dr Brenda 10 060825-01.webp" alt="Patient 2 - Veneers Before and After" onerror="this.style.display='none'">
               <div class="gallery-item-overlay"><span class="gallery-label"></span></div>
             </div>
             <div class="gallery-item">
               <div class="gallery-placeholder">Patient 3<br>Before & After</div>
-              <img src="images/before&after_photo/Teeth B&A Dr Brenda 11 060825-01.jpg" alt="Patient 3 - Dental Implants Before and After" onerror="this.style.display='none'">
+              <img src="images/before&after_photo/Teeth B&A Dr Brenda 11 060825-01.webp" alt="Patient 3 - Dental Implants Before and After" onerror="this.style.display='none'">
               <div class="gallery-item-overlay"><span class="gallery-label"></span></div>
             </div>
             <div class="gallery-item">
               <div class="gallery-placeholder">Patient 4<br>Before & After</div>
-              <img src="images/before&after_photo/Teeth B&A Dr Brenda 2 060825-01.jpg" alt="Patient 4 - Braces Before and After" onerror="this.style.display='none'">
+              <img src="images/before&after_photo/Teeth B&A Dr Brenda 2 060825-01.webp" alt="Patient 4 - Braces Before and After" onerror="this.style.display='none'">
               <div class="gallery-item-overlay"><span class="gallery-label"></span></div>
             </div>
           </div>
@@ -800,22 +808,22 @@
           <div class="gallery-grid">
             <div class="gallery-item">
               <div class="gallery-placeholder">Patient 5<br>Before & After</div>
-              <img src="images/before&after_photo/Teeth B&A Dr Brenda 281025-01.jpg" alt="Patient 5 - Smile Makeover Before and After" onerror="this.style.display='none'">
+              <img src="images/before&after_photo/Teeth B&A Dr Brenda 281025-01.webp" alt="Patient 5 - Smile Makeover Before and After" onerror="this.style.display='none'">
               <div class="gallery-item-overlay"><span class="gallery-label"></span></div>
             </div>
             <div class="gallery-item">
               <div class="gallery-placeholder">Patient 6<br>Before & After</div>
-              <img src="images/before&after_photo/Teeth B&A Dr Brenda 3 060825-01.jpg" alt="Patient 6 - Veneers Before and After" onerror="this.style.display='none'">
+              <img src="images/before&after_photo/Teeth B&A Dr Brenda 3 060825-01.webp" alt="Patient 6 - Veneers Before and After" onerror="this.style.display='none'">
               <div class="gallery-item-overlay"><span class="gallery-label"></span></div>
             </div>
             <div class="gallery-item">
               <div class="gallery-placeholder">Patient 7<br>Before & After</div>
-              <img src="images/before&after_photo/Teeth B&A Dr Brenda 4 060825-01.jpg" alt="Patient 7 - Dental Implants Before and After" onerror="this.style.display='none'">
+              <img src="images/before&after_photo/Teeth B&A Dr Brenda 4 060825-01.webp" alt="Patient 7 - Dental Implants Before and After" onerror="this.style.display='none'">
               <div class="gallery-item-overlay"><span class="gallery-label"></span></div>
             </div>
             <div class="gallery-item">
               <div class="gallery-placeholder">Patient 8<br>Before & After</div>
-              <img src="images/before&after_photo/Teeth B&A Dr Brenda 5 060825-01.jpg" alt="Patient 8 - Braces Before and After" onerror="this.style.display='none'">
+              <img src="images/before&after_photo/Teeth B&A Dr Brenda 5 060825-01.webp" alt="Patient 8 - Braces Before and After" onerror="this.style.display='none'">
               <div class="gallery-item-overlay"><span class="gallery-label"></span></div>
             </div>
           </div>
@@ -825,22 +833,22 @@
           <div class="gallery-grid">
             <div class="gallery-item">
               <div class="gallery-placeholder">Patient 9<br>Before & After</div>
-              <img src="images/before&after_photo/Teeth B&A Dr Brenda 6 060825-01.jpg" alt="Patient 9 - Smile Makeover Before and After" onerror="this.style.display='none'">
+              <img src="images/before&after_photo/Teeth B&A Dr Brenda 6 060825-01.webp" alt="Patient 9 - Smile Makeover Before and After" onerror="this.style.display='none'">
               <div class="gallery-item-overlay"><span class="gallery-label"></span></div>
             </div>
             <div class="gallery-item">
               <div class="gallery-placeholder">Patient 10<br>Before & After</div>
-              <img src="images/before&after_photo/Teeth B&A Dr Brenda 7 060825-01.jpg" alt="Patient 10 - Veneers Before and After" onerror="this.style.display='none'">
+              <img src="images/before&after_photo/Teeth B&A Dr Brenda 7 060825-01.webp" alt="Patient 10 - Veneers Before and After" onerror="this.style.display='none'">
               <div class="gallery-item-overlay"><span class="gallery-label"></span></div>
             </div>
             <div class="gallery-item">
               <div class="gallery-placeholder">Patient 11<br>Before & After</div>
-              <img src="images/before&after_photo/Teeth B&A Dr Brenda 8 060825-01.jpg" alt="Patient 11 - Dental Implants Before and After" onerror="this.style.display='none'">
+              <img src="images/before&after_photo/Teeth B&A Dr Brenda 8 060825-01.webp" alt="Patient 11 - Dental Implants Before and After" onerror="this.style.display='none'">
               <div class="gallery-item-overlay"><span class="gallery-label"></span></div>
             </div>
             <div class="gallery-item">
               <div class="gallery-placeholder">Patient 12<br>Before & After</div>
-              <img src="images/before&after_photo/Teeth B&A Dr Brenda 9 060825-01.jpg" alt="Patient 12 - Braces Before and After" onerror="this.style.display='none'">
+              <img src="images/before&after_photo/Teeth B&A Dr Brenda 9 060825-01.webp" alt="Patient 12 - Braces Before and After" onerror="this.style.display='none'">
               <div class="gallery-item-overlay"><span class="gallery-label"></span></div>
             </div>
           </div>
@@ -874,22 +882,22 @@
           <div class="gallery-grid">
             <div class="gallery-item">
               <div class="gallery-placeholder">Patient 1<br>Before & After</div>
-              <img src="images/b&f/y.jpg" alt="Implant Patient 1" onerror="this.style.display='none'">
+              <img src="images/b&f/y.webp" alt="Implant Patient 1" onerror="this.style.display='none'">
               <div class="gallery-item-overlay"><span class="gallery-label">Dental Implants</span></div>
             </div>
             <div class="gallery-item">
               <div class="gallery-placeholder">Patient 2<br>Before & After</div>
-              <img src="images/b&f/y%20(1).jpg" alt="Implant Patient 2" onerror="this.style.display='none'">
+              <img src="images/b&f/y%20(1).webp" alt="Implant Patient 2" onerror="this.style.display='none'">
               <div class="gallery-item-overlay"><span class="gallery-label">Dental Implants</span></div>
             </div>
             <div class="gallery-item">
               <div class="gallery-placeholder">Patient 3<br>Before & After</div>
-              <img src="images/b&f/y%20(2).jpg" alt="Implant Patient 3" onerror="this.style.display='none'">
+              <img src="images/b&f/y%20(2).webp" alt="Implant Patient 3" onerror="this.style.display='none'">
               <div class="gallery-item-overlay"><span class="gallery-label">Dental Implants</span></div>
             </div>
             <div class="gallery-item">
               <div class="gallery-placeholder">Patient 4<br>Before & After</div>
-              <img src="images/b&f/y%20(3).jpg" alt="Implant Patient 4" onerror="this.style.display='none'">
+              <img src="images/b&f/y%20(3).webp" alt="Implant Patient 4" onerror="this.style.display='none'">
               <div class="gallery-item-overlay"><span class="gallery-label">Dental Implants</span></div>
             </div>
           </div>
@@ -930,7 +938,7 @@
               </div>
             </div>
             <div class="team-card">
-              <div class="team-portrait"><img src="images/doctors/dr_kenneth2.jpeg" alt="Dr. Kenneth Wong" loading="lazy" decoding="async"></div>
+              <div class="team-portrait"><img src="images/doctors/dr_kenneth2.webp" alt="Dr. Kenneth Wong" loading="lazy" decoding="async"></div>
               <div class="team-info">
                 <div class="team-card-role">Founder &amp; Director</div>
                 <h3 class="team-card-name">Dr. Kenneth Wong</h3>
@@ -993,7 +1001,7 @@
               </div>
             </div>
             <div class="team-card">
-              <div class="team-portrait"><img src="images/doctors/drsee.jpeg" alt="Dr. See Wan Zhen" loading="lazy" decoding="async"></div>
+              <div class="team-portrait"><img src="images/doctors/drsee.webp" alt="Dr. See Wan Zhen" loading="lazy" decoding="async"></div>
               <div class="team-info">
                 <div class="team-card-role">Principal Dentist</div>
                 <h3 class="team-card-name">Dr. See Wan Zhen</h3>
@@ -1053,7 +1061,7 @@
               </div>
             </div>
             <div class="team-card">
-              <div class="team-portrait"><img src="images/doctors/dr_mac.jpeg" alt="Dr. Khoo Su Ee" loading="lazy" decoding="async"></div>
+              <div class="team-portrait"><img src="images/doctors/dr_mac.webp" alt="Dr. Khoo Su Ee" loading="lazy" decoding="async"></div>
               <div class="team-info">
                 <div class="team-card-role">Oral &amp; Maxillofacial Surgeon</div>
                 <h3 class="team-card-name">Dr. Khoo Su Ee (Mac)</h3>
@@ -1135,7 +1143,7 @@
       
       <div class="location-card reveal">
         <div class="location-map">
-          <img src="images/clinic_photo/summerton_branch_clinic_img.png" alt="Summerton Clinic">
+          <img src="images/clinic_photo/summerton_branch_clinic_img.webp" alt="Summerton Clinic">
         </div>
         <div class="location-body">
           <span class="location-badge">Bayan Lepas</span>
@@ -1154,7 +1162,7 @@
 
       <div class="location-card reveal">
         <div class="location-map">
-          <img src="images/clinic_photo/pulau_tikus_branch_clinic_img.JPG" alt="Pulau Tikus Clinic">
+          <img src="images/clinic_photo/pulau_tikus_branch_clinic_img.webp" alt="Pulau Tikus Clinic">
         </div>
         <div class="location-body">
           <span class="location-badge">Georgetown</span>
@@ -1173,7 +1181,7 @@
 
       <div class="location-card reveal">
         <div class="location-map">
-          <img src="images/clinic_photo/bm_branch_clinic_img2.jpeg" alt="Bukit Mertajam Clinic">
+          <img src="images/clinic_photo/bm_branch_clinic_img2.webp" alt="Bukit Mertajam Clinic">
         </div>
         <div class="location-body">
           <span class="location-badge">Seberang Perai</span>
