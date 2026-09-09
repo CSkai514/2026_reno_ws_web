@@ -105,6 +105,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .section-heading em { font-style: italic; color: var(--accent); }
 
+  /* ──────────── IMPLANT TEAM SECTION ──────────── */
+  .implant-team { background: var(--cream); }
+  .implant-team-intro { margin-bottom: 48px; }
+  .implant-team-intro p {
+    font-size: 1.05rem; color: var(--mid); line-height: 1.85; max-width: 800px; margin-top: 16px; font-weight: 300;
+  }
+  .implant-team-grid {
+    display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-bottom: 48px;
+  }
+  .implant-doc {
+    background: var(--warm-white); border: 1px solid var(--sand); border-radius: 2px; overflow: hidden; display: flex; flex-direction: column;
+    transition: transform 0.4s;
+  }
+  .implant-doc:hover { transform: translateY(-4px); }
+  .implant-doc__photo {
+    aspect-ratio: 4/5; width: 100%; object-fit: cover; object-position: top center; display: block; background: var(--cream);
+  }
+  .implant-doc__body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+  .implant-doc__role {
+    font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+  }
+  .implant-doc__name {
+    font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: var(--charcoal); margin-bottom: 4px;
+  }
+  .implant-doc__cred {
+    font-size: 0.85rem; color: var(--mid); line-height: 1.5; margin-bottom: 16px; font-weight: 400;
+  }
+  .implant-doc__note {
+    font-size: 0.92rem; line-height: 1.65; color: var(--charcoal); margin-bottom: 24px; font-weight: 300;
+  }
+  .implant-doc__tags {
+    display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: auto 0 0;
+  }
+  .implant-doc__tags li {
+    font-size: 0.75rem; border: 1px solid var(--sand); border-radius: 20px; padding: 4px 12px; color: var(--mid);
+  }
+  .implant-team__closing {
+    font-family: var(--serif); font-size: 1.3rem; line-height: 1.5; font-style: italic; color: var(--charcoal);
+    max-width: 600px; margin: 0 0 32px; padding-left: 20px; border-left: 2px solid var(--accent);
+  }
+  .implant-team__foot { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
+  .implant-team__cta {
+    background: var(--accent); color: #fff; text-decoration: none; padding: 14px 28px; border-radius: 2px;
+    font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; transition: background 0.3s;
+  }
+  .implant-team__cta:hover { background: var(--dark); }
+  .implant-team__link { color: var(--charcoal); font-size: 0.9rem; text-decoration: underline; font-weight: 500; }
+
   /* ──────────── INTRO SECTION (Story Layout) ──────────── */
   .story { background: var(--warm-white); }
   .story-grid {
@@ -278,6 +326,74 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ── IMPLANT TEAM SECTION ── -->
+<section class="implant-team" id="implant-team">
+  <div class="container">
+    <div class="implant-team-intro reveal">
+      <span class="section-tag">Our Implant Team</span>
+      <h2 class="section-heading">The clinicians behind your<br><em>implant journey.</em></h2>
+      <p>At Wong &amp; Sim Dental, dental implant treatment is supported by a dedicated multidisciplinary team.</p>
+      <p>From single dental implants to multiple implants and full-mouth rehabilitation, each case is assessed and managed according to the individual needs of the patient. The appropriate clinician is involved at each stage — from dental implant placement and gum health to the planning, design and delivery of your final teeth.</p>
+    </div>
+
+    <div class="implant-team-grid">
+      
+      <article class="implant-doc reveal">
+        <img class="implant-doc__photo" src="https://www.wongandsimdental.com/images/doctors/dr_kenneth2.webp" alt="Dr. Kenneth Wong, Founder and Director" loading="lazy">
+        <div class="implant-doc__body">
+          <span class="implant-doc__role">Founder &amp; Director</span>
+          <h3 class="implant-doc__name">Dr. Kenneth Wong</h3>
+          <p class="implant-doc__cred">BDS (AIMST) · MSc Restorative Dentistry (Manchester)</p>
+          <p class="implant-doc__note">Focuses on dental implant treatment, from single-tooth replacement to complex full-arch rehabilitation, including digital-guided dental implant placement, guided bone regeneration and others.</p>
+          <ul class="implant-doc__tags"><li>Dental Implants</li><li>Full Arch</li><li>Oral Surgery</li></ul>
+        </div>
+      </article>
+
+      <article class="implant-doc reveal">
+        <img class="implant-doc__photo" src="https://www.wongandsimdental.com/images/doctors/DrLoo.webp" alt="Dr. Loo Chien Win, Principal Dentist" loading="lazy">
+        <div class="implant-doc__body">
+          <span class="implant-doc__role">Principal Dentist</span>
+          <h3 class="implant-doc__name">Dr. Loo Chien Win</h3>
+          <p class="implant-doc__cred">BDS (AIMST) · MSc Restorative Dentistry (Birmingham)</p>
+          <p class="implant-doc__note">Focuses on dental implant treatment, from single to multiple dental implants, including guided bone regeneration.</p>
+          <ul class="implant-doc__tags"><li>Implants</li><li>Bone Regeneration</li><li>Grafting</li></ul>
+        </div>
+      </article>
+
+      <article class="implant-doc reveal">
+        <img class="implant-doc__photo" src="https://www.wongandsimdental.com/images/doctors/DrFreeda.webp" alt="Dr. Freeda Woon, Specialist Periodontist" loading="lazy">
+        <div class="implant-doc__body">
+          <span class="implant-doc__role">Specialist Periodontist</span>
+          <h3 class="implant-doc__name">Dr. Freeda Woon</h3>
+          <p class="implant-doc__cred">DDS (USM) · MClinDent Periodontology (London)</p>
+          <p class="implant-doc__note">Specialises in the gum and supporting tissues around dental implants, including implant placement and the management of complex cases.</p>
+          <ul class="implant-doc__tags"><li>Gum Surgery</li><li>Implants</li><li>Peri-implant Care</li></ul>
+        </div>
+      </article>
+
+      <article class="implant-doc reveal">
+        <img class="implant-doc__photo" src="https://www.wongandsimdental.com/images/doctors/dr_mac.webp" alt="Dr. Khoo Su Ee (Mac), Oral and Maxillofacial Surgeon" loading="lazy">
+        <div class="implant-doc__body">
+          <span class="implant-doc__role">Oral &amp; Maxillofacial Surgeon</span>
+          <h3 class="implant-doc__name">Dr. Khoo Su Ee (Mac)</h3>
+          <p class="implant-doc__cred">BDS (AIMST) · MClinDent Oral &amp; Maxillofacial Surgery (Malaya)</p>
+          <p class="implant-doc__note">Specialises in the surgical aspects of complex dental implant cases, including implant placement and sinus lifting.</p>
+          <ul class="implant-doc__tags"><li>Oral Surgery</li><li>Sinus Lifting</li><li>Complex Extractions</li></ul>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="reveal">
+        <p class="implant-team__closing">Comprehensive dental implant care, from a single implant to full-mouth rehabilitation.</p>
+        <div class="implant-team__foot">
+          <a class="implant-team__cta" href="#contact">Book an implant consultation</a>
+          <a class="implant-team__link" href="index.html#team">Meet the full team</a>
+        </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── INTRO SECTION ── -->
 <section class="story">
   <div class="container">
@@ -294,7 +410,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
-<!-- ── IMPLANT RESULTS SLIDER ── -->
 <!-- ── IMPLANT RESULTS SLIDER ── -->
 <section class="results" id="results">
   <div class="container">

@@ -105,6 +105,71 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .section-heading em { font-style: italic; color: var(--accent); }
 
+  /* ──────────── VENEER CLINICIAN SECTION ──────────── */
+  .veneer-clinician { background: var(--cream); }
+  .veneer-clinician-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 56px; align-items: center;
+  }
+  .veneer-clinician figure { margin: 0; }
+  .veneer-clinician__photo {
+    width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top center;
+    display: block; border-radius: 2px; background: var(--warm-white);
+  }
+  .veneer-clinician__caption {
+    font-size: 0.85rem; color: var(--mid); margin: 14px 0 0; line-height: 1.5; font-weight: 300;
+  }
+  .veneer-clinician__title {
+    font-family: var(--serif); font-size: clamp(2.2rem, 3.4vw, 3.2rem); line-height: 1.15; font-weight: 300;
+    color: var(--charcoal); margin: 0 0 24px;
+  }
+  .veneer-clinician__title em { font-style: italic; color: var(--accent); }
+  .veneer-clinician__body p {
+    font-size: 1.05rem; color: var(--charcoal); line-height: 1.85; margin: 0 0 16px; font-weight: 300;
+  }
+  .veneer-clinician__body p.dim { color: var(--mid); }
+  
+  /* Quote Block - Updated to match Image 1 */
+  .veneer-clinician__quote {
+    margin: 32px 0 0; 
+    padding: 40px; 
+    background: #132430; /* Softer slate blue */
+    color: var(--warm-white); 
+    border-radius: 12px; /* Smooth rounded corners */
+  }
+  .veneer-clinician__quote p {
+    font-family: var(--serif); 
+    font-size: 1.45rem; 
+    line-height: 1.6; 
+    margin: 0 0 24px; 
+    color: var(--warm-white); 
+    font-weight: 300;
+  }
+  .veneer-clinician__quote em { 
+    font-style: italic; 
+    color: var(--warm-white); 
+  }
+  .veneer-clinician__quote cite {
+    font-family: var(--sans);
+    font-style: normal; 
+    font-size: 0.75rem; 
+    letter-spacing: 0.15em; 
+    text-transform: uppercase; 
+    color: rgba(255,255,255,0.65);
+    font-weight: 500;
+  }
+
+  .veneer-clinician__foot {
+    margin-top: 32px; display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center;
+  }
+  .veneer-clinician__cta {
+    display: inline-block; background: var(--accent); color: #fff; text-decoration: none;
+    padding: 14px 28px; border-radius: 2px; font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; transition: background 0.3s;
+  }
+  .veneer-clinician__cta:hover { background: var(--dark); }
+  .veneer-clinician__link { color: var(--charcoal); font-size: 0.9rem; text-decoration: underline; font-weight: 500; }
+
   /* ──────────── PROCESS GRID ──────────── */
   .process { background: var(--cream); }
   .process-grid {
@@ -133,6 +198,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     transition: color 0.4s; position: relative; z-index: 2;
   }
   .process-card:hover .process-desc { color: rgba(220,250,249,0.65); }
+
+  /* ──────────── COMMITMENT (STORY) ──────────── */
+  .vstory { background: var(--warm-white); }
+  .vstory-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: flex-start;
+  }
+  .vstory-text p {
+    font-size: 1.05rem; color: var(--mid); line-height: 1.85; margin-top: 28px; font-weight: 300;
+  }
+  .vstory-text p + p { margin-top: 16px; }
 
   /* ──────────── FAQ ACCORDION (Custom) ──────────── */
   .faq { background: var(--warm-white); }
@@ -224,7 +299,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media (max-width: 1024px) {
     section { padding: 80px 32px; }
     .nav-links { display: none; }
-    .contact-grid, .factors-grid, .process-grid { grid-template-columns: 1fr; }
+    .contact-grid, .factors-grid, .process-grid, .veneer-clinician-inner { grid-template-columns: 1fr; }
+    .vstory-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -287,6 +363,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-content">
     <span class="hero-tag">Cosmetic Dentistry</span>
     <h1><em>Veneers</em></h1>
+  </div>
+</section>
+
+<!-- ── VENEER CLINICIAN SECTION ── -->
+<section class="veneer-clinician">
+  <div class="container veneer-clinician-inner">
+    <figure class="reveal">
+      <img class="veneer-clinician__photo" src="images/doctors/DrBrenda.webp" alt="Dr. Brenda Sim" loading="lazy">
+      <figcaption class="veneer-clinician__caption">
+        The veneer cases shown on this page were treated by Dr. Brenda Sim.
+      </figcaption>
+    </figure>
+
+    <div class="veneer-clinician__body reveal">
+      <h2 class="veneer-clinician__title">Bespoke Smile Design by <em>Dr. Brenda Sim</em></h2>
+
+      <p>Dr. Brenda Sim focuses on cosmetic and restorative dentistry, with a particular interest in smile design and veneers — from refined single-tooth enhancements to complete smile transformations.</p>
+      <p class="dim">Every case begins with a personal consultation and bespoke trial smile, taking the time to understand your preferences and carefully refine the shape, proportions and shade before treatment begins. The aim is a smile that feels natural, balanced and uniquely yours.</p>
+
+      <blockquote class="veneer-clinician__quote">
+        <p>“The truth is, the smiles I'm <em>proudest</em> of aren't the brightest or the straightest — they're the ones that bring someone's <em>confidence</em> back.”</p>
+        <cite>Dr. Brenda Sim</cite>
+      </blockquote>
+
+      <div class="veneer-clinician__foot">
+        <a class="veneer-clinician__cta" href="#contact">Book a smile consultation</a>
+        <a class="veneer-clinician__link" href="index.html#team">Meet the full team</a>
+      </div>
+    </div>
   </div>
 </section>
 
