@@ -191,49 +191,189 @@
       font-family: var(--serif); font-size: 1.25rem; line-height: 1.5; font-style: italic;
     }
 
-    /* ──────────── MICROSCOPE / CLINICAL PRECISION SECTION ──────────── */
-    .tech-quote {
-      margin: 32px 0 0; padding: 36px; background: #132430; color: var(--warm-white); border-radius: 4px;
+    /* ──────────── MICROSCOPE CLINICAL FEATURE ──────────── */
+    .micro-feature { background: var(--cream); }
+    .micro-feature-header {
+      margin-bottom: 48px;
     }
-    .tech-quote p {
-      font-family: var(--serif); font-size: 1.25rem; line-height: 1.6; margin: 0; color: var(--warm-white); font-weight: 300; font-style: italic;
+    .micro-feature-header p.lede-text {
+      font-size: 1.05rem;
+      color: var(--mid);
+      line-height: 1.85;
+      max-width: 820px;
+      margin-top: 16px;
+      font-weight: 300;
+    }
+    .micro-feature-body {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 56px;
+      align-items: flex-start;
+    }
+    .micro-feature figure { margin: 0; }
+    .micro-feature__photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      border-radius: 2px;
+      background: var(--warm-white);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    }
+    .micro-feature-quote {
+      margin: 0 0 28px;
+      padding: 36px 40px;
+      background: #132430;
+      color: var(--warm-white);
+      border-radius: 4px;
+    }
+    .micro-feature-quote p {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      line-height: 1.6;
+      margin: 0;
+      color: var(--warm-white);
+      font-weight: 300;
+      font-style: italic;
+    }
+    .micro-feature-text {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.8;
+      font-weight: 300;
     }
 
-    /* ──────────── TREATMENT OPTIONS GRID ──────────── */
-    .solutions { background: var(--cream); }
+    @media (max-width: 1024px) {
+      .micro-feature-body {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ──────────── TREATMENT OPTIONS GRID & MOBILE SWIPE ──────────── */
+    .solutions { background: var(--warm-white); }
     .solutions-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; margin-top: 64px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 64px;
     }
     .solution-card {
-      background: var(--warm-white); padding: 50px 42px; position: relative; overflow: hidden;
-      transition: background 0.4s; border: 1px solid var(--sand);
+      background: var(--warm-white);
+      padding: 44px 36px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.4s;
+      border: 1px solid var(--sand);
+      display: flex;
+      flex-direction: column;
     }
     .solution-num {
-      font-family: var(--serif); font-size: 4.5rem; font-weight: 300;
-      color: var(--sand); position: absolute; top: 16px; right: 24px; line-height: 1; transition: color 0.4s;
+      font-family: var(--serif);
+      font-size: 4.5rem;
+      font-weight: 300;
+      color: var(--sand);
+      position: absolute;
+      top: 16px;
+      right: 24px;
+      line-height: 1;
+      transition: color 0.4s;
     }
     .solution-card:hover { background: var(--charcoal); }
     .solution-card:hover .solution-num { color: rgba(255,255,255,0.12); }
     .solution-title {
-      font-family: var(--serif); font-size: 1.65rem; font-weight: 400; color: var(--charcoal);
-      margin-bottom: 14px; transition: color 0.4s; position: relative; z-index: 2;
+      font-family: var(--serif);
+      font-size: 1.65rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 14px;
+      transition: color 0.4s;
+      position: relative;
+      z-index: 2;
     }
     .solution-card:hover .solution-title { color: var(--warm-white); }
     .solution-desc {
-      font-size: 0.92rem; color: var(--mid); line-height: 1.8; font-weight: 300;
-      transition: color 0.4s; position: relative; z-index: 2; margin-bottom: 20px;
+      font-size: 0.92rem;
+      color: var(--mid);
+      line-height: 1.8;
+      font-weight: 300;
+      transition: color 0.4s;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 20px;
+      flex: 1;
     }
     .solution-card:hover .solution-desc { color: rgba(220,250,249,0.7); }
     .solution-meta {
-      position: relative; z-index: 2; border-top: 1px solid var(--sand); padding-top: 14px; font-size: 0.85rem;
-      display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; color: var(--mid); transition: border-color 0.4s, color 0.4s;
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid var(--sand);
+      padding-top: 14px;
+      font-size: 0.85rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 6px 16px;
+      color: var(--mid);
+      transition: border-color 0.4s, color 0.4s;
     }
     .solution-meta strong { color: var(--charcoal); font-weight: 500; }
     .solution-card:hover .solution-meta { border-top-color: rgba(255,255,255,0.15); color: rgba(220,250,249,0.7); }
     .solution-card:hover .solution-meta strong { color: var(--accent-light); }
 
+    .swipe-hint {
+      display: none;
+    }
+
+    /* Mobile Swipe for 01-07 */
+    @media (max-width: 768px) {
+      .solutions {
+        padding-inline: 0;
+      }
+      .solutions .container > div:first-child {
+        padding-inline: 24px;
+      }
+      .swipe-hint {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-size: 0.75rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-top: 14px;
+      }
+      .solutions-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 0 24px;
+        padding: 0 24px 20px;
+        margin-top: 36px;
+        gap: 16px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+      }
+      .solutions-grid::-webkit-scrollbar {
+        height: 4px;
+      }
+      .solutions-grid::-webkit-scrollbar-thumb {
+        background: var(--sand);
+        border-radius: 99px;
+      }
+      .solution-card {
+        flex: 0 0 85%;
+        max-width: 85%;
+        scroll-snap-align: center;
+        padding: 36px 28px;
+      }
+    }
+
     /* ──────────── FAQ ACCORDION ──────────── */
-    .faq { background: var(--warm-white); }
+    .faq { background: var(--cream); }
     .faq-container { max-width: 900px; margin: 64px auto 0; }
     .faq-item { border-bottom: 1px solid var(--sand); }
     .faq-trigger {
@@ -321,7 +461,6 @@
           <li><a href="treatments.html">General Dentistry</a></li>
           <li><a href="dental_implants.html">Dental Implants</a></li>
           <li><a href="veneers.html">Veneers</a></li>
-          <li><a href="braces_aligners.html">Braces &amp; Aligners</a></li>
           <li><a href="#" aria-current="page">Root Canal Treatment</a></li>
         </ul>
       </li>
@@ -345,8 +484,7 @@
         <li><a href="treatments.html">General Dentistry</a></li>
         <li><a href="dental_implants.html">Dental Implants</a></li>
         <li><a href="veneers.html">Veneers</a></li>
-        <li><a href="braces_aligners.html">Braces &amp; Aligners</a></li>
-        <li><a href="#" aria-current="page">Root Canal Treatment</a></li>
+        <li><a href="#">Root Canal Treatment</a></li>
         <li><a href="index.html#results">Results</a></li>
         <li><a href="index.html#team">Our Team</a></li>
         <li><a href="faq.html">FAQ</a></li>
@@ -462,40 +600,52 @@
   </section>
 
   <!-- ── MICROSCOPE SECTION ── -->
-  <section class="story" style="background: var(--cream);" id="microscope">
+  <section class="micro-feature" id="microscope">
     <div class="container">
-      <div class="story-grid">
+      
+      <!-- Top Title & Lead Paragraph -->
+      <div class="micro-feature-header reveal">
+        <span class="section-tag">How we work</span>
+        <h2 class="section-heading">Magnification changes <em>what can be seen.</em></h2>
+        <p class="lede-text">We use surgical operating microscopes during root canal treatment to manage complex anatomy and canals that are difficult to reach. Painless injections and safe, precise treatment under magnification make the appointment comfortable and the outcome predictable.</p>
+      </div>
+
+      <!-- 2-Column Split: Image on Left, Quote & Copy on Right -->
+      <div class="micro-feature-body">
+        <figure class="reveal">
+          <img class="micro-feature__photo" src="images/A7408347.jpg" alt="Root canal treatment under surgical operating microscope" loading="lazy">
+        </figure>
+
         <div class="reveal">
-          <span class="section-tag">How we work</span>
-          <h2 class="section-heading">Magnification changes <em>what can be seen.</em></h2>
-          <p style="font-size: 1.05rem; color: var(--mid); line-height: 1.85; margin-top: 20px; font-weight: 300;">We use surgical operating microscopes during root canal treatment to manage complex anatomy and canals that are difficult to reach. Painless injections and safe, precise treatment under magnification make the appointment comfortable and the outcome predictable.</p>
-          <div class="tech-quote">
+          <div class="micro-feature-quote">
             <p>&ldquo;Careful cleaning and a well-sealed canal matter far more to long-term success than how quickly the treatment is finished.&rdquo;</p>
           </div>
-        </div>
-        <div class="story-text reveal">
-          <p>Canals are narrow, curved and often branched. Some molars carry an extra canal that sits hidden under a shelf of dentine and is easy to miss with the naked eye — and a canal that is missed is one that stays infected, which is the most common reason a root canal treatment fails.</p>
-          <p>Under high magnification and coaxial light, those openings become visible. Fractures can be identified before treatment rather than discovered afterwards, and only the tooth structure that has to go is removed.</p>
-          <p>Comfort is dealt with before any treatment begins. Topical gel numbs the gum first and the anaesthetic is delivered slowly, so the injection itself is barely felt, and we confirm the tooth is fully numb before starting. Most patients find the appointment far easier than they expected.</p>
-          <p>Treatment is carried out under rubber dam, a thin sheet that isolates the tooth. It keeps saliva and bacteria out of the canals during cleaning and stops irrigating solutions and small instruments from reaching the rest of your mouth.</p>
-          <p>Radiographs are taken before, during and after treatment to confirm canal length and the quality of the final seal.</p>
+
+          <div class="micro-feature-text">
+            <p>Canals are narrow, curved and often branched. Some molars carry an extra canal that sits hidden under a shelf of dentine and is easy to miss with the naked eye — and a canal that is missed is one that stays infected, which is the most common reason a root canal treatment fails.</p>
+            <p>Under high magnification and coaxial light, those openings become visible. Fractures can be identified before treatment rather than discovered afterwards, and only the tooth structure that has to go is removed.</p>
+            <p>Comfort is dealt with before any treatment begins. Topical gel numbs the gum first and the anaesthetic is delivered slowly, so the injection itself is barely felt, and we confirm the tooth is fully numb before starting. Most patients find the appointment far easier than they expected.</p>
+            <p>Treatment is carried out under rubber dam, a thin sheet that isolates the tooth. It keeps saliva and bacteria out of the canals during cleaning and stops irrigating solutions and small instruments from reaching the rest of your mouth.</p>
+          </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- ── OPTIONS SECTION (ALL 7 CLIENT SERVICES) ── -->
+  <!-- ── OPTIONS SECTION (01 - 07 SWIPEABLE ON MOBILE) ── -->
   <section class="solutions" id="options">
     <div class="container">
-      <div style="text-align: center; margin-bottom: 64px;">
+      <div style="text-align: center;">
         <span class="section-tag">Treatment options</span>
         <h2 class="section-heading">Ways we can <em>save your tooth.</em></h2>
         <p style="font-size: 1.05rem; color: var(--mid); line-height: 1.85; max-width: 720px; margin: 16px auto 0; font-weight: 300;">Which of these applies depends on the state of the nerve, how much tooth remains, and whether the tooth has been treated before.</p>
+        <span class="swipe-hint">&larr; Swipe to view options (01 &ndash; 07) &rarr;</span>
       </div>
 
       <div class="solutions-grid">
         <!-- 01 -->
-        <div class="solution-card reveal">
+        <div class="solution-card">
           <span class="solution-num">01</span>
           <h3 class="solution-title">Primary root canal treatment</h3>
           <p class="solution-desc">The standard treatment for a tooth whose nerve has become irreversibly inflamed or infected. The canals are cleaned, shaped, disinfected and sealed, and the tooth is then rebuilt.</p>
@@ -507,7 +657,7 @@
         </div>
 
         <!-- 02 -->
-        <div class="solution-card reveal">
+        <div class="solution-card">
           <span class="solution-num">02</span>
           <h3 class="solution-title">Root canal retreatment</h3>
           <p class="solution-desc">For a tooth treated previously that has stayed sore, flared up again, or shows infection on a radiograph. Old filling material is removed, missed or untreated canals are located, and the system is cleaned and sealed again.</p>
@@ -519,7 +669,7 @@
         </div>
 
         <!-- 03 -->
-        <div class="solution-card reveal">
+        <div class="solution-card">
           <span class="solution-num">03</span>
           <h3 class="solution-title">Managing complications from previous treatment</h3>
           <p class="solution-desc">Some teeth arrive with a difficulty already inside them — an instrument separated in a canal, a canal that has been blocked or ledged, a perforation through the root wall, or a post that has to be removed before the canal can be reached again. Under the microscope, most of these can be dealt with and the tooth kept.</p>
@@ -531,7 +681,7 @@
         </div>
 
         <!-- 04 -->
-        <div class="solution-card reveal">
+        <div class="solution-card">
           <span class="solution-num">04</span>
           <h3 class="solution-title">Emergency pain relief</h3>
           <p class="solution-desc">When you arrive in acute pain or with swelling, the first appointment is about settling it. The inflamed tissue is removed and the tooth dressed with intracanal medication, which usually relieves the pain quickly, with the full treatment completed afterwards.</p>
@@ -543,7 +693,7 @@
         </div>
 
         <!-- 05 -->
-        <div class="solution-card reveal">
+        <div class="solution-card">
           <span class="solution-num">05</span>
           <h3 class="solution-title">Treatment for children's teeth</h3>
           <p class="solution-desc">Baby teeth and newly erupted adult teeth are handled differently. In children the aim is to keep the tooth in place until it is due to be lost, or to let an immature root finish developing before anything more is done.</p>
@@ -555,7 +705,7 @@
         </div>
 
         <!-- 06 -->
-        <div class="solution-card reveal">
+        <div class="solution-card">
           <span class="solution-num">06</span>
           <h3 class="solution-title">Surgical endodontics</h3>
           <p class="solution-desc">Where infection persists at the root tip and conventional retreatment is not possible or has not worked, the tip of the root and the surrounding infected tissue can be removed through a small procedure at the gum, and the root end sealed.</p>
@@ -567,7 +717,7 @@
         </div>
 
         <!-- 07 -->
-        <div class="solution-card reveal" style="grid-column: 1 / -1;">
+        <div class="solution-card" style="grid-column: 1 / -1;">
           <span class="solution-num">07</span>
           <h3 class="solution-title">Rebuilding the tooth afterwards</h3>
           <p class="solution-desc">A treated back tooth is more prone to fracture and usually needs full coverage — an onlay or a <a href="veneers.html" style="color:var(--accent); text-decoration: underline;">crown</a> — to protect it. How much healthy structure is left decides what it needs, and we remove as little of it as possible.</p>
@@ -878,11 +1028,13 @@
     "@context":"https://schema.org",
     "@type":"FAQPage",
     "mainEntity":[
-      {"@type":"Question","name":"Is root canal treatment painful?","acceptedAnswer":{"@type":"Answer","text":"The treatment is carried out under local anaesthetic and feels much like having a filling. Most of the pain associated with root canals is the pain of the infected tooth beforehand, which the treatment relieves. The tooth is often tender to bite on for a few days afterwards."}},
-      {"@type":"Question","name":"How many visits does a root canal take?","acceptedAnswer":{"@type":"Answer","text":"Many teeth can be completed in a single appointment of 60 to 90 minutes. Teeth with several canals, a persistent infection or a previous treatment usually need two visits, plus one or two further visits to restore the tooth."}},
-      {"@type":"Question","name":"Will I need a crown after root canal treatment?","acceptedAnswer":{"@type":"Answer","text":"Back teeth usually do, because a treated molar or premolar has lost internal structure and takes heavy biting force. Front teeth with limited decay can often be restored with a bonded filling instead."}},
-      {"@type":"Question","name":"Is it better to extract the tooth instead?","acceptedAnswer":{"@type":"Answer","text":"Extraction is quicker and cheaper on the day, but the space then needs managing and replacing the tooth with an implant or bridge costs more. Where a tooth is restorable, keeping it is generally the better long-term decision."}},
-      {"@type":"Question","name":"How long does a root canal treated tooth last?","acceptedAnswer":{"@type":"Answer","text":"Well-treated teeth that are properly restored commonly last for decades and many last for life. The main risks are fracture of an unprotected tooth, new decay at the margins, and infection persisting in a canal that could not be fully cleaned."}}
+      {"@type":"Question","name":"Is root canal treatment painful?","acceptedAnswer":{"@type":"Answer","text":"The treatment itself is carried out under local anaesthetic and should feel much like having a filling. Topical gel is applied first and the injection given slowly, so the numbing itself is barely felt. Most of the pain people associate with root canals is the pain of the infected tooth beforehand, which the treatment relieves. The tooth is commonly tender to bite on for a few days afterwards, and ordinary pain relief is enough to manage that."}},
+      {"@type":"Question","name":"How many visits will I need?","acceptedAnswer":{"@type":"Answer","text":"Many teeth can be completed in a single appointment, typically 60 to 90 minutes. Teeth with several canals, a persistent infection or a previous treatment usually need two. Restoring the tooth afterwards takes one or two further visits."}},
+      {"@type":"Question","name":"Will I need a crown afterwards?","acceptedAnswer":{"@type":"Answer","text":"Back teeth usually do. A treated molar or premolar has lost internal structure and takes heavy biting force, so full coverage protects it from splitting. Front teeth with limited decay can often be restored with a bonded filling instead. We assess how much sound tooth remains and recommend the least destructive option that will protect it."}},
+      {"@type":"Question","name":"Should I just have the tooth taken out instead?","acceptedAnswer":{"@type":"Answer","text":"Extraction is quicker and cheaper on the day, but the space then needs managing. Neighbouring teeth drift, the opposing tooth over-erupts, and replacing the tooth with an implant or bridge costs more than the root canal would have. Where a tooth is restorable, keeping it is generally the better long-term decision. Where it is cracked below the gum or too little structure remains, we will say so honestly rather than treat a tooth that cannot be saved."}},
+      {"@type":"Question","name":"How long does a treated tooth last?","acceptedAnswer":{"@type":"Answer","text":"Well-treated teeth that are properly restored commonly last for decades, and many last for life. The main risks are fracture of a tooth left unprotected, new decay at the margins, and infection persisting in a canal that could not be fully cleaned. Regular check-ups catch these early."}},
+      {"@type":"Question","name":"What if the treatment does not work?","acceptedAnswer":{"@type":"Answer","text":"A small proportion of teeth do not settle. In most of those cases retreatment is possible, and where it is not, a surgical approach at the root tip is often an option. We review treated teeth at six to twelve months specifically so that anything failing to heal is picked up while options remain."}},
+      {"@type":"Question","name":"How much does it cost?","acceptedAnswer":{"@type":"Answer","text":"Fees depend on which tooth is involved, how many canals it has, whether it has been treated before, and what it needs to restore it afterwards. An accurate figure requires an examination and a radiograph. You will be given the full cost in writing before treatment starts, including the final restoration. Please contact the clinic for current fee ranges."}}
     ]
   }
   </script>
