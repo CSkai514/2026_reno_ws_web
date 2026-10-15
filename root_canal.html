@@ -326,7 +326,9 @@
     .swipe-hint {
       display: none;
     }
-
+    .solution-dots {
+      display: none;
+    }
     /* Mobile Swipe for 01-07 */
     @media (max-width: 768px) {
       .solutions {
@@ -371,7 +373,26 @@
         padding: 36px 28px;
       }
     }
-
+    @media (max-width: 768px) {
+      .solution-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-top: 18px;
+      }
+      .solution-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: var(--sand);
+        transition: background 0.3s ease, width 0.3s ease;
+      }
+      .solution-dot.active {
+        background: var(--accent);
+        width: 20px; /* Expands slightly when active for an elegant modern look */
+      }
+    }
     /* ──────────── FAQ ACCORDION ──────────── */
     .faq { background: var(--cream); }
     .faq-container { max-width: 900px; margin: 64px auto 0; }
@@ -728,6 +749,7 @@
           </div>
         </div>
       </div>
+      <div class="solution-dots" id="solutionDots"></div>
     </div>
   </section>
 
@@ -1018,6 +1040,34 @@
           document.body.style.overflow = '';
         });
       });
+    }
+    // Sync dots for 01-07 swipe on mobile
+    const solutionsGrid = document.getElementById('solutionsGrid');
+    const solutionDotsContainer = document.getElementById('solutionDots');
+
+    if (solutionsGrid && solutionDotsContainer) {
+      const cards = solutionsGrid.querySelectorAll('.solution-card');
+      
+      // Create 1 dot per card
+      cards.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.classList.add('solution-dot');
+        if (index === 0) dot.classList.add('active');
+        solutionDotsContainer.appendChild(dot);
+      });
+
+      const dots = solutionDotsContainer.querySelectorAll('.solution-dot');
+
+      // Update active dot on scroll
+      solutionsGrid.addEventListener('scroll', () => {
+        const scrollLeft = solutionsGrid.scrollLeft;
+        const cardWidth = cards[0].offsetWidth + 16; // card width + gap
+        const activeIndex = Math.round(scrollLeft / cardWidth);
+
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === activeIndex);
+        });
+      }, { passive: true });
     }
   </script>
   <script src="assets/script.js"></script>

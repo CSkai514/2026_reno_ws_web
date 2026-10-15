@@ -64,8 +64,8 @@ try {
     $mail->Port       = 465;
 
     $mail->setFrom('devsite_mail@devsite.wongandsimdental.com', 'Wong & Sim Website');
-    $mail->addAddress('wsdentalwebdev@gmail.com');
-    $mail->addReplyTo('devsite_mail@devsite.wongandsimdental.com');
+    $mail->addAddress('wongandsimdentalsurgery@gmail.com');
+    // $mail->addReplyTo('wongandsimdentalsurgery@gmail.com');
 
     $mail->Subject = "New Enquiry: $treatment — $clinic";
     $mail->Body =
