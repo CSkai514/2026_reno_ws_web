@@ -507,7 +507,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="nav-cta">
     <a href="tel:043763770" class="btn-call">Call Us</a>
     <a href="#contact" class="btn-book">Book Now</a>
-    <button class="mobile-menu-toggle" id="mobileMenuOpen">
+    <button class="mobile-menu-toggle" id="mobileMenuOpen" aria-label="Open mobile menu">
       <i class="fas fa-bars"></i>
     </button>
   </div>
@@ -603,9 +603,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <div class="slider-nav">
-    <button class="slider-dot active" data-index="0"></button>
-    <button class="slider-dot" data-index="1"></button>
-    <button class="slider-dot" data-index="2"></button>
+    <button class="slider-dot active" data-index="0" aria-label="Slide 1"></button>
+    <button class="slider-dot" data-index="1" aria-label="Slide 2"></button>
+    <button class="slider-dot" data-index="2" aria-label="Slide 3"></button>
   </div>
 
   <div class="hero-scroll">
@@ -1314,8 +1314,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <input type="tel" name="phone" placeholder="01X-XXX XXXX">
         </div>
         <div class="form-group">
-          <label>Selected Treatment</label>
-          <select name="treatment">
+          <label>Selected Treatment
+          <select name="treatment" style="margin-top: 8px;">
             <option value="" disabled selected>Choose a treatment</option>
             <option>General Dentistry</option>
             <option>Smile Makeover</option>
@@ -1325,15 +1325,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <option>Teeth Whitening</option>
             <option>Other Inquiry</option>
           </select>
+          </label>
         </div>
         <div class="form-group">
-          <label>Preferred Clinic</label>
-          <select name="clinic">
+          <label>Preferred Clinic
+          <select name="clinic" style="margin-top: 8px;">
             <option value="" disabled selected>Choose a location</option>
             <option>Summerton, Bayan Lepas</option>
             <option>Pulau Tikus, Georgetown</option>
             <option>Bukit Mertajam, Seberang Perai</option>
           </select>
+          </label>
         </div>
         <div class="form-group">
           <label id="messageLabel">Tell us more (optional)</label>
